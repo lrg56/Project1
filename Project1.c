@@ -159,6 +159,10 @@ int main(int argc, char *argv[]){
   Image *PPM_image;
   PPM_image = (Image *)malloc(sizeof(Image));
 
+  if(argc != 4){
+    fprintf(stderr, "Incorrect number of arguments please check they are correct");
+    exit(1);
+
   if(atoi(argv[1]) == 3){
     read(argv[2], PPM_image);
     write_P3(argv[3], PPM_image);
